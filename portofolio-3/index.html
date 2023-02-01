@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Navbar</title>
+	<style>
+	
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		font-family: sans-serif;
+			/*untuk menghilangkan scroll kanan*/
+		overflow-x: hidden;
+	}
+
+	/*navbar*/
+	nav {
+		display: flex;
+		background-color: #18E6D9FF;
+		justify-content: space-around;
+		color: #F3F00BFF;
+			/*cara dengan memakai padding*/
+		/*padding: 20px 0;*/
+		
+			/*cara dengan memakai height*/
+		height: 50px;
+		align-items: center;
+	}
+
+	nav .logo {
+		letter-spacing: 3px;
+	}
+
+	nav ul {
+		display: flex;
+		list-style: none;
+		width: 40%;
+		justify-content: space-between;
+	}
+
+	nav ul li a {
+		color: #F3F00BFF;
+		text-decoration: none;
+		font-size: 0.8em;
+	}
+
+	nav ul li a:hover{
+		color: black;
+	}
+
+
+	/*hamburger menu*/
+	.menu-toggle {
+			/*jika dilebar normal hamberger menunya tidak keliatan, makanya diberikan display none. tapi jika dilebar untuk mobile menu hambergernya keliatan, makanya dilebar mobile diberikan displaynya flex.*/
+		display: none;
+		flex-direction: column;
+			/*dikasih tinggi, supaya ada jaraknya*/
+		height: 20px;
+		justify-content: space-between;
+		position: relative;
+	}
+
+	.menu-toggle input {
+		position: absolute;
+		width: 40px;
+		height: 28px;
+		left: -5px;
+		top: -3px;
+		opacity: 0;
+			/*untuk memajukan posisi checkboxnya kedepan*/
+		z-index: 2; 
+			/*untuk merubah mousenya*/
+		cursor: pointer;
+	}
+
+	.menu-toggle span {
+		display: block;
+		width: 28px;
+		height: 3px;
+		background-color: #F3F00BFF;
+		border-radius: 3px;
+		transition: all 0.5s;
+	}
+
+	/*hamburger menu animation*/
+		/*animasi supaya membuat tanda silang*/
+	.menu-toggle span:nth-child(2){
+		transform-origin: 0 0;
+	}
+
+	.menu-toggle span:nth-child(4){
+		transform-origin: 0 100%;
+	}
+		/*tekhnik css siblings/saudara*/
+		/*cara bacanya : ketika input yang ada dimenu toggle ini di check, jika diceklis maka cari css yang merupakan sibling/saudara, cari siblingnya yaitu merupakan span yang dia anak kedua*/
+	.menu-toggle input:checked ~ span:nth-child(2){
+		background-color: white;
+		transform: rotate(45deg) translate(-1px, -1px);
+	}
+		/*ini untuk cari siblingnya yaitu merupakan span yang dia anak keempat*/
+	.menu-toggle input:checked ~ span:nth-child(4){
+		background-color: white;
+		transform: rotate(-45deg) translate(-1px, 0);
+	}
+		/*yg anak ketiga ini tidak perlu transform origin karna tidak membuatnya berputar melainkan membuatnya menghilang*/
+	.menu-toggle input:checked ~ span:nth-child(3){
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	/*responsive breakpoint*/
+
+		/*ukuran tablet*/
+	@media screen and (max-width: 768px) {
+		nav ul {
+			width: 50%;
+		}
+	}
+
+		/*ukuran mobile*/
+	@media screen and (max-width: 576px) {
+		.menu-toggle {
+			display: flex;
+		}
+
+		nav ul {
+			background-color: #18E6D9FF;
+				/*untuk memindahkan navigasi saat posisi mobile*/
+			position: absolute;
+				/*untuk mengatur posisi navigasi*/
+			right: 0;
+			top: 0;
+			height: 100vh;
+			width: 80%;
+				/*untuk ngatur posisi tulisan navigasi*/
+			align-items: center;
+			justify-content: space-evenly;
+			z-index: -1;
+				/*supaya tulisannya navigasi menjejer kebawah pakai flex-direction yang column */
+			flex-direction: column;
+				/*supaya navigasinya ilang/ngumpet dikanan diberikan transform dan kasi translate. dan supaya scroll kanannya hilang maka kita bikin bodynya fixed dengan cara dibody diberikan overflow.*/
+			transform: translateX(100%);
+			transition: all 1s;
+			opacity: 0;
+		}
+			/*cara bacanya :jika ul yang di nav punya kelas slide*/
+		nav ul.slide {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}		
+	</style>
+</head>
+<body>
+	
+ <nav>
+ 	<div class="logo">
+ 		<h4>Muqniansyah Arifin</h4>
+ 	</div>
+
+ 	<ul>
+ 		<li><a href="">Home</a></li>
+ 		<li><a href="">Product</a></li>
+ 		<li><a href="">Service</a></li>
+ 		<li><a href="">Gallery</a></li>
+ 		<li><a href="">About</a></li>
+ 	</ul>
+
+ 		<!-- untuk membuat hamburger menu -->
+ 	<div class="menu-toggle">
+ 			<!-- gunanya checkbox gunanya supaya tau ketika checkbox itu diceklis atau tidak. checkbox ini berada diatas hamburger menu dan transparan. supaya gampang untuk mengaturnya, checkboxnya dikasih positionnya absolute. dan menu-togglenya diberikan position relative. -->
+ 		<input type="checkbox">
+ 		<span></span>
+ 		<span></span>
+ 		<span></span>
+ 	</div>
+ </nav>
+
+ <!-- ini javascript -->
+<script>
+		//ngambil menu toggle
+	const menuToggle = document.querySelector('.menu-toggle input');
+		//ngambil nav
+	const nav = document.querySelector('nav ul');
+		// artinya yg dibawah ini yaitu ketika menu toggle ini diklik maka jalankan fungsi ini,
+		//ambil nav, lalu ambil classlist lalu ditoggle.
+		//toogle itu jika tdk ada kelasnya,tambahin. tapi jika ada kelasnya,hilangin.(mirip saklar on/off). class yang mau ditambahin yaitu class slide.
+	menuToggle.addEventListener('click', function() {
+		nav.classList.toggle('slide');
+	});
+</script>
+
+
+</body>
+</html>

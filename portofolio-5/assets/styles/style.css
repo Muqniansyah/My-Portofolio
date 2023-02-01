@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* navigasi */
+nav {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    background-color: yellowgreen;
+    padding: 40px;
+    text-align: center;
+    position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+    z-index: 9999;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 40px;
+    font-size: 21px;
+}
+
+nav a:hover {
+    font-weight: 800;
+}
+
+    /* dropdown */
+.menu ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul .subMenu-1 {
+    background-color: whitesmoke;
+    border-radius: 20px;
+    text-align: left;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: none;
+}
+
+.menu ul li:hover .subMenu-1 {
+    display: block;
+    margin-top: 10px;
+}
+
+    /* submenu2 */
+ul .subMenu-2 {
+    background-color: whitesmoke;
+    border-radius: 20px;
+    text-align: left;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: none;
+}
+
+.menu ul li:hover .subMenu-2 {
+    display: block;
+    margin-top: 10px;
+}
+
+/* jumbotron */
+.jumbotron {
+    font-family: 'Inconsolata', monospace;
+    margin-top: 102px;
+    background-color: antiquewhite;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -150px;
+    background-attachment: fixed;
+    height: 60vh;
+    padding: 5rem;
+    font-size: 3em;
+    border-bottom: 5px grey solid;
+}
+
+.jumbotron h1 {
+    padding: 2rem;
+}
+
+.jumbotron h1, .jumbotron p {
+    text-shadow: 2px 4px 5px white;
+}
+
+/* main */
+    /* kontensatu */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 45px;
+    padding: 20px;
+    margin-top: 15px;
+    margin-left: 20%;
+}
+
+#Profile aside h2 {
+    padding-bottom: 20px;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+#Profile aside p {
+    font-size: 20px;
+}
+
+    /* kontendua */
+#bali {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    background-color: cornflowerblue;
+}
+
+#bali section {
+    padding: 10vh;
+}
+
+#bali section h2 {
+    padding: 25px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#bali section p {
+    padding: 25px;
+    font-size: 20px;
+}
+
+#bali .fitur {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+    /* kontentiga */
+#tempatWisata {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    min-height: 150vh;
+    background-color: cornflowerblue;
+}
+
+#tempatWisata h2 {
+    text-align: center;
+    padding: 5%;
+    font-size: 2em;
+}
+
+#tempatWisata .wadah {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wadah .thumbnail {
+    background-color: aquamarine;
+    text-align: center;
+    padding: 15px;
+    width: 250px;
+    margin: 50px;
+    box-shadow: 0px 30px 10px -20px rgba(0,0,0,.75);
+	transition: .3s;
+}
+
+.wadah .thumbnail:hover {
+    box-shadow: 0px 80px 10px -40px rgba(0,0,0,.15);
+    margin-top: 40px;
+}
+
+.wadah h3 {
+    padding: 10px;
+}
+
+.thumbnail .teksfitur {
+    margin-top: 43px;
+}
+
+    /* kontenempat */
+.penjelasan {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    min-height: 150vh;
+    background-color: cornflowerblue;
+}
+
+.penjelasan h3 {
+    padding: 40px;
+    font-size: 2em;
+}
+
+.penjelasan p {
+    padding: 20px ;
+    font-size: 20px;
+}
+    /* munculkan elemen saat scroll tertentu */
+        /* saat pertama menghilang */
+.elemen {
+    position: relative;
+    transform: translate(30px);
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+        /* saat kedua memunculkan kembali elemen dengan menambahkan class */
+.muncul {
+    position: relative;
+    transform: translate(0px);
+    opacity: 1;
+}
+
+/* footer */
+footer {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    background-color: darksalmon;
+}
+
+footer .contact {
+    height: 15vw;
+    padding: 50px;
+    padding-right: 10px;
+}
+
+footer .contact a{
+    text-decoration: none;
+    color: black;
+}
+
+footer .contact a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+footer .copyright {
+    background-image: url(../img/background2.png);
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/* media query */
+@media screen and (max-width: 992px) {
+        /* kontentiga */
+    #tempatWisata .wadah {
+        max-width: 400px;
+    }
+
+    .thumbnail .teksfitur {
+        margin-top: 0;
+    }
+    
+        /* kontendua */
+    #bali {
+        max-width: 800px;
+    }
+ 
+    #bali section p {
+        font-size: 19px;
+    }
+
+        /* navigasi */
+    nav a {
+        padding: 20px;
+    }
+
+        /* footer */
+    footer .contact {
+        max-width: 600px;
+        padding-top: 10px;
+    }
+}
+
+    /* kontensatu */
+@media screen and (max-width: 768px) {
+    #Profile {
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        max-width: 800px;
+        border-bottom: 5px grey solid;
+    }
+    
+    #Profile section {
+        background-color: whitesmoke;
+        min-width: 30%;
+    }
+    
+    #Profile section img {
+        max-width: 80%;
+        margin-left: 70px;
+    }
+    
+    #Profile aside {
+        padding: 10%;
+        background-color: whitesmoke;
+        min-width: 30%;
+    }    
+}
+
+@media screen and (min-width: 769px) {
+    #Profile {
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        display: flex;
+        min-height: 75vh;
+        border-bottom: 5px grey solid;
+        background-color: whitesmoke;
+    }
+    
+    #Profile section {
+        margin-bottom: 30px;
+        min-width: 30%;
+        background-color: whitesmoke;
+    }
+    
+    #Profile section img {
+        max-width: 80%;
+        padding: 35px;
+    }
+
+    .card2 {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        margin-left: 20%;
+    }
+    
+    #Profile aside {
+        background-color: rgb(245, 168, 168);
+        width: 90%;
+        padding: 10%;
+        margin-left: 30px;
+    }    
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gallery</title>
+	<link rel="stylesheet" href="cssreset.css">
+	<link rel="stylesheet" href="style.css">
+	<!-- ini link fonts dari google -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">		
+</head>
+<body>
+	
+	<h1>Foto-Foto</h1>
+
+	<div class="container">
+
+		<ul class="gallery">
+			<li>
+				<a href="#gambar-1">
+					<img src="img/full/friend.png" alt="foto 1">
+					<span>foto 1</span>
+				</a>
+
+				<div class="overlay" id="gambar-1">
+					<!-- untuk href yang close dikasih #(kress) supaya menghilangkan id yang gambar-1 tadi. -->
+					<a href="#" class="close">x close</a>
+					<a href="#gambar-4" class="prev">prev</a>
+					<img src="img/full/friend.png" alt="foto 1">
+					<a href="#gambar-2" class="next">next</a>
+				</div>
+			</li>
+
+			<li>
+				<a href="#gambar-2">
+					<img src="img/full/friend2.jpg" alt="foto 2">
+					<span>foto 2</span>
+				</a>
+
+				<div class="overlay" id="gambar-2">
+					<!-- untuk href yang close dikasih #(kress) supaya menghilangkan id yang gambar-2 tadi. -->
+					<a href="#" class="close">x close</a>
+					<a href="#gambar-1" class="prev">prev</a>
+					<img src="img/full/friend2.jpg" alt="foto 2">
+					<a href="#gambar-3" class="next">next</a>
+				</div>
+			</li>
+
+			<li>
+				<a href="#gambar-3">
+					<img src="img/full/friend3.jpg" alt="foto 3">
+					<span>foto 3</span>
+				</a>
+
+				<div class="overlay" id="gambar-3">
+					<!-- untuk href yang close dikasih #(kress) supaya menghilangkan id yang gambar-3 tadi. -->
+					<a href="#" class="close">x close</a>
+					<a href="#gambar-2" class="prev">prev</a>
+					<img src="img/full/friend3.jpg" alt="foto 3">
+					<a href="#gambar-4" class="next">next</a>
+				</div>
+			</li>
+
+			<li>
+				<a href="#gambar-4">
+					<img src="img/full/friend4.jpg" alt="foto 4">
+					<span>foto 4</span>
+				</a>
+
+				<div class="overlay" id="gambar-4">
+					<!-- untuk href yang close dikasih #(kress) supaya menghilangkan id yang gambar-4 tadi. -->
+					<a href="#" class="close">x close</a>
+					<a href="#gambar-3" class="prev">prev</a>
+					<img src="img/full/friend4.jpg" alt="foto 4">
+					<a href="#gambar-1" class="next">next</a>
+				</div>
+			</li>
+
+			
+<!-- ini adalah div untuk clear -->
+			<div class="clear"></div>	
+		</ul>
+		
+	</div>
+
+</body>
+</html>

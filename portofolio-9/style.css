@@ -1,0 +1,293 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #ddd;
+    font-size: 18px;
+    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    margin: 50px;
+}
+
+/* container */
+.container {
+    display: grid;
+    gap: 10px;
+}
+
+/* header */
+.header {
+    display: grid;
+    grid-template-areas: 
+    'hero hero feature-1'
+    'hero hero feature-2';
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 300px;
+    background-image: url(img/800.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-left: 23px;
+    padding-top: 30%;
+}
+
+.hero h2, .hero p {
+    color: white;
+    display: none;
+}
+
+.features {
+    background-color: white;
+    color: black;
+    display: grid;
+    /* justify-content: center;
+    align-content: center; */
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-image: url(img/1024.jpg);
+    background-size: cover;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(img/1024x.jpg);
+    background-size: cover;
+}
+
+.features .price {
+    font-size: 3em;
+    font-weight: 200;
+}
+
+/* navigasi */
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    /* untuk mainkan urutannya dengan pakai order dan order ini untuk item */
+    order: -1;
+}
+
+.menu .brand {
+    font-size: 1.3em;
+    color: #333;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.menu a {
+    /* alasan dibeikan display block agar saat di click tidak hanya tulisan saja tapi satu blok kotak (jangkauannya)  */
+    display: block;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/*hamburger menu*/
+.menu-toggle {
+    /*jika dilebar normal hamberger menunya tidak keliatan, makanya diberikan display none. tapi jika dilebar untuk mobile menu hambergernya keliatan, makanya dilebar mobile diberikan displaynya flex.*/
+display: none;
+flex-direction: column;
+    /*dikasih tinggi, supaya ada jaraknya*/
+height: 20px;
+justify-content: space-between;
+position: relative;
+z-index: 999;
+}
+
+.menu-toggle input {
+position: absolute;
+width: 40px;
+height: 28px;
+left: -5px;
+top: -3px;
+opacity: 0;
+    /*untuk memajukan posisi checkboxnya kedepan*/
+z-index: 2; 
+    /*untuk merubah mousenya*/
+cursor: pointer;
+}
+
+.menu-toggle span {
+display: block;
+width: 28px;
+height: 3px;
+background-color: #000;
+border-radius: 3px;
+transition: all 0.5s;
+}
+
+/*hamburger menu animation*/
+/*animasi supaya membuat tanda silang*/
+.menu-toggle span:nth-child(2){
+transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+transform-origin: 0 100%;
+}
+/*tekhnik css siblings/saudara*/
+/*cara bacanya : ketika input yang ada dimenu toggle ini di check, jika diceklis maka cari css yang merupakan sibling/saudara, cari siblingnya yaitu merupakan span yang dia anak kedua*/
+.menu-toggle input:checked ~ span:nth-child(2){
+background-color: white;
+transform: rotate(45deg) translate(-1px, -1px);
+}
+/*ini untuk cari siblingnya yaitu merupakan span yang dia anak keempat*/
+.menu-toggle input:checked ~ span:nth-child(4){
+background-color: white;
+transform: rotate(-45deg) translate(-1px, 0);
+}
+/*yg anak ketiga ini tidak perlu transform origin karna tidak membuatnya berputar melainkan membuatnya menghilang*/
+.menu-toggle input:checked ~ span:nth-child(3){
+opacity: 0;
+transform: scale(0);
+}
+
+/* services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.service .icon img {
+    width: 70px;
+}
+
+.service h3 {
+    font-size: 1.5em;
+}
+
+.service p {
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 0.8;
+}
+
+/* gallery */
+.gallery {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+}
+
+.gallery h2 {
+    /* grid-column-start: 1;
+    grid-column-end: -1; */
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* responsive breakpoint */
+    /* full hd */
+@media (max-width: 1024px) {
+    .menu {
+        /* dengan memberikan nilai inherit pada order artinya mengembalikkan ke awalnya */
+        order: inherit;
+        grid-template-columns: 1fr;
+    }
+
+    .menu .brand {
+        display: none;
+    }
+
+    .hero h2, .hero p {
+        display: block;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+}
+
+    /* tablet */
+@media (max-width: 768px) {
+    .menu {
+        order: -1;
+        justify-items: end;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu ul {
+        display: flex;
+        background-color: #000;
+            /*untuk memindahkan navigasi saat posisi mobile*/
+        position: absolute;
+            /*untuk mengatur posisi navigasi*/
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+            /*untuk ngatur posisi tulisan navigasi*/
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 1;
+            /*supaya tulisannya navigasi menjejer kebawah pakai flex-direction yang column */
+        flex-direction: column;
+            /*supaya navigasinya ilang/ngumpet dikanan diberikan transform dan kasi translate. dan supaya scroll kanannya hilang maka kita bikin bodynya fixed dengan cara dibody diberikan overflow.*/
+        transform: translateY(-100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+        /*cara bacanya :jika ul yang di nav punya kelas slide*/
+    .menu ul.slide {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+    /* handphone */
+@media (max-width: 600px) {
+    body {
+        margin: 15px;
+    }
+
+    .header {
+        grid-template-areas: 
+            'hero'
+            'feature-1'
+            'feature-2';
+    }
+}

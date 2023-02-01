@@ -1,0 +1,190 @@
+body {
+	font: 18px/36px 'Bebas Neue', cursive;
+	background-image: url(img/bg.jpg);
+}
+
+h1	{
+	font-size: 80px;
+	margin: 50px 0;
+	text-align: center;
+	text-shadow: 1px 1px 1px white;
+}
+
+.container {
+	width: 600px;
+	background-color: white;
+	margin: auto;
+	padding: 30px;
+	box-shadow: 0 0 3px 3px rgba(0,0,0,.3);
+	border-radius: 5px;
+}
+
+/*img ini nanti dihapus saja jika sudah ada foto thumbnailnya yang 120px*/
+/*ini adalah cara untuk mengakalinya saja atau meresize langsung*/
+img {
+	width: 120px;
+	height: 120px;
+	/*untuk membuat gambar jadi lingkaran*/
+	border-radius: 50%;
+}
+
+.gallery li {
+	/*nanti jangan lupa ganti width dan heightnya sesuai gambar jika ingin mengganti gambarnya*/
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	/*overflow: hidden;*/
+	border: 5px solid #666;	
+	float: left;
+	margin-right: 20px;
+	position: relative;
+}
+
+.gallery li span {
+	display: block;
+	/*samakan dengan ukuran gambarnya*/
+	width: 120px;
+	height: 120px;
+	background-color: rgba(200,200,200,.5);
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	line-height: 120px;
+	color: #333;
+	text-shadow: 1px 1px 1px #ddd;
+	opacity: 0;
+	transform: scale(0) rotate(0);
+	transition: 0.3s;
+}
+
+/*cara baca :*/
+/*ketika a yang didalam li ini dihover maka span didalamnya akan solid atau transparan jadi 1*/
+.gallery li a:hover span {
+	opacity: 1;
+	transform: scale(1) rotate(360deg);
+}
+
+.clear {
+	clear: both;
+}
+
+
+/*overlay*/
+.overlay {
+	width: 0;
+	height: 0;
+	overflow: hidden;	
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0);
+	z-index: 9999;
+	transition: .8s;
+	text-align: center;	
+	padding: 100px 0;
+}
+
+		/*ini adalah kondisi pada saat ditarget*/
+.overlay:target {
+	width: auto;
+	height: auto;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0,0,.7);
+}
+
+/*overlay img yang width,height dan border radius ini nanti dihapus saja jika sudah ada foto fullnya yang 700px*/
+/*ini adalah cara untuk mengakalinya saja atau meresize langsung*/
+.overlay img {
+	width: 700px;
+	height: 700px;
+	border-radius: 0px;
+		/*maksud dari max-height adalah gambarnya akan selalu maksimal tingginya*/
+	max-height: 100%;
+	box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+}
+
+.overlay:target img {
+	animation: ZoomDanFade 1s;
+}
+
+.overlay .close {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+		/*cara menarik supaya bisa ketengah */
+	margin-left: -20px;
+	color: white;
+	text-decoration: none;
+	background-color: black;
+	border: 1px solid white;
+	line-height: 14px;
+	padding: 5px;
+	opacity: 0;
+}
+
+.overlay:target .close {
+	animation: SlideDownFade .5s .5s forwards;
+}
+
+.overlay:target .next,
+.overlay:target .prev {
+	animation: FadeAjah .5s .5s forwards;
+}
+
+
+/*navigasi*/
+.next, .prev {
+	width: 102px;
+	height: 88px;
+	background-image: url(img/kanan.png);
+	position: absolute;
+	text-indent: -9999px;
+	top: 40%;
+	margin-left: 50px;
+	opacity: 0;
+}
+
+.prev {
+	background-image: url(img/kiri.png);
+	margin-left: -150px;
+}
+
+
+
+
+/*animasi*/
+@keyframes FadeAjah {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes ZoomDanFade {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes SlideDownFade {
+	0% {
+		opacity: 0;
+		margin-top: -20px;
+	}
+
+	100% {
+		opacity: 1;
+		margin-top: 0;
+	}
+}

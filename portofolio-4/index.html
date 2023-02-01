@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>muqni LinkTree</title>
+		<!-- fonts google -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<style>
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			font-family: 'Poppins', sans-serif;
+		}
+
+		body {
+			background-image: url(background.png);
+		}
+		
+		.container {
+			max-width: 500px;
+			height: 100vh;
+			margin: 0 auto;
+			background: red;
+			background-image: url(bckg.jpg);
+			background-position: center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+
+		.profile {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+		}
+
+		.profile img {
+			width: 150px;
+			height: 150px;
+			border: 3px solid #A0A0A0FF;
+			border-radius: 100%;
+		}
+
+		.profile p {
+			font-size: 2em;
+			font-weight: 900;
+			letter-spacing: 2px;
+			color: #404040FF;
+			text-transform: capitalize;
+			text-align: center;
+		}
+			/*cara supaya link ketengah*/
+		.link {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 20px;
+		}
+			/*caranya selesai*/
+		.link a {
+			text-decoration: none;
+			color: black;
+			background-color: #eaeaea;
+			font-size: 24px;
+			text-align: center;
+			border: 3px solid black;
+			border-radius: 7px;
+			margin: 5px 10px;
+			padding: 10px;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+
+		.link a:hover{
+			background-color: azure;
+		}
+
+		footer {
+			text-align: center;
+		}
+
+		footer i {
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<!-- profile picture -->
+		<div class="profile">
+			<img src="muq.jpg" alt="error image">
+			<p>Tap Tap Dor</p>
+		</div>
+
+		<!-- Link Tree Button -->
+		<div class="link">
+			<a href="https://instagram.com/mqnnia_" target="blank">instagram</a>
+			<a href="https://telegram.com" target="blank">telegram</a>
+			<a href="https://facebook.com" target="blank">facebook</a>
+			<a href="https://youtube.com" target="blank">youtube</a>
+		</div>
+
+		<!-- Footer -->
+		<footer>
+			<i>made with love</i>
+		</footer>
+	</div>
+
+	
+</body>
+</html>

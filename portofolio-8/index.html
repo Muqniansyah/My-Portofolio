@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bookshelf Apps</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+
+<header class="TopBar">
+  <h1 class="TopBar_Judul">Aplikasi Rak buku </h1>
+</header>
+
+<div class="container">
+  <main>
+    <section class="input_section">
+    <h2>Tambahkan Buku</h2>
+    <form id="inputBook">
+      <div class="input">
+        <label for="inputBookTitle">Judul</label>
+        <input id="inputBookTitle" type="text" required placeholder="Masukkan Judul Buku"  maxlength="25">
+        <label id="notifikasiSisaKarakter">Sisa karakter : <span id="sisaKarakter"></span></label>
+      </div>
+      <div class="input">
+        <label for="inputBookAuthor">Penulis</label>
+        <input id="inputBookAuthor" type="text" required placeholder="Masukkan Penulis Buku">
+      </div>
+      <div class="input">
+        <label for="inputBookYear">Tahun</label>
+        <input id="inputBookYear" type="number" required placeholder="Masukkan Tahun Terbit Buku">
+      </div>
+      <div class="input_inline">
+        <label for="inputBookIsComplete">Selesai dibaca</label>
+        <input id="inputBookIsComplete" type="checkbox">
+      </div>
+      <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
+    </form>
+    </section>
+  
+    <section class="search_section">
+    <h2>Cari Buku</h2>
+    <form id="searchBook">
+      <label for="searchBookTitle"></label>
+      <input id="searchBookTitle" type="text" placeholder="Masukkan Judul Buku">
+      <button id="searchSubmit" type="submit">Cari</button>
+    </form>
+    </section>
+  </main>
+
+  <aside>
+    <!-- belum selesai dibaca -->
+    <section class="book_shelf">
+      <h2>Belum selesai dibaca</h2>
+      <div id="incompleteBookshelfList" class="book_list">
+      </div>
+    </section>
+  
+    <!-- selesai dibaca -->
+    <section class="book_shelf">
+      <h2>Selesai dibaca</h2>
+      <div id="completeBookshelfList" class="book_list">
+      </div>
+    </section>
+  </aside>
+</div> 
+
+<footer>
+  <div class="copyright">
+    <p>&hearts; Made With : Muqniansyah Arifin &hearts;</p>
+  </div>
+</footer>
+<script src="assets/javascript/script.js"></script>
+
+</body>
+</html>
