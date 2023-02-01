@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, input, button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+input, button {
+    font-size: 21px;
+}
+
+body {
+    background-color: rgb(175, 236, 117);
+    background-image: url(../img/library.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* header */
+.TopBar {
+    padding: 20px;
+    padding-left: 40px;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+/* main */
+    /* section 1 */
+.input_section {
+    background-color: rgb(147, 182, 143);
+    background-image: url(../img/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 2px solid rgb(255, 251, 251);
+    border-radius: 10px;
+}
+
+.input_section h2 {
+    text-align: center;
+    color: white;
+
+}
+
+.input_section form .input {
+    margin: 20px 0;
+}
+
+.input_section form .input #notifikasiSisaKarakter {
+    visibility: hidden;
+}
+
+.input_section form button {
+    background-color: rgb(84, 187, 235);
+    font-family: 'Uchen', serif;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.input_section form button:hover {
+    background: white;
+    color: rgb(84, 187, 235);
+}
+
+.input_section form button span {
+    font-weight: bold;
+}
+
+.input_section form .input input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.input_section form .input label {
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.input_section form .input_inline {
+    margin: 12px 0;
+}
+
+.input_section form .input_inline label {
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+    /* section 2 */
+.search_section {
+    background-color: rgb(147, 182, 143);
+    background-image: url(../img/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border: 2px solid rgb(255, 251, 251);
+    border-radius: 10px;
+}
+
+.search_section h2 {
+    color: white;
+}
+
+.search_section form input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.search_section form button {
+    background-color: rgb(84, 187, 235);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search_section form button:hover {
+    background-color: white;
+    color:rgb(84, 187, 235) ;
+}
+
+/* aside */
+    /* section 3 dan 4 */
+.book_shelf {
+    background-color: cadetblue;
+    margin: 16px 0 0 0;
+    border: 2px solid rgb(255, 251, 251);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.book_shelf h2 {
+    color: white;
+}
+
+.book_shelf .book_list {
+    padding: 16px;
+}
+   
+    /* dinamis js */
+.book_shelf .book_list .book_item {
+    padding: 8px 16px 16px 16px;
+    border: 2px solid rgb(255, 251, 251);
+    border-radius: 5px;
+    margin: 10px 0;
+    background-color: aquamarine;
+    background-image: url(../img/background.png);
+}
+
+.book_shelf .book_list .book_item h3 {
+    margin: 8px 0;
+    background-color: burlywood;
+    color: whitesmoke;
+    text-align: center;
+    text-transform: lowercase;
+}
+
+.book_shelf .book_list .book_item h3:hover {
+    margin: 8px 0;
+    background-color: cyan;
+    color: black;
+    text-align: center;
+}
+
+.book_shelf .book_list .book_item p {
+    margin: 8px 0;
+    margin-left: 30px ;
+    color: black;
+}
+
+    /* button */
+.check-button {
+    width: 40px;
+    height: 40px;
+    background: url('../icon/check.svg');
+    background-size: contain;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.check-button:hover {
+    background: url('../icon/check2.svg');
+    background-size: contain;
+}
+
+.trash-button {
+    width: 40px;
+    height: 40px;
+    background: url('../icon/trash.svg');
+    background-size: contain;
+    margin-left: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.trash-button:hover {
+    background: url('../icon/trash2.svg');
+    background-size: contain;
+}
+
+.trash-button2 {
+    width: 40px;
+    height: 40px;
+    background: url('../icon/trash.svg');
+    background-size: contain;
+    margin-left: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.trash-button2:hover {
+    background: url('../icon/trash2.svg');
+    background-size: contain;
+}
+
+.undo-button {
+    width: 40px;
+    height: 40px;
+    background: url('../icon/undo.svg');
+    background-size: contain;
+    margin-left: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.undo-button:hover {
+    background: url('../icon/undo2.svg');
+    background-size: contain;
+}
+
+
+/* footer */
+footer {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    background-color: rgb(46, 42, 42);
+    color: white;
+}
+
+footer .copyright {
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* media query */
+@media screen and (max-width: 768px) {
+    aside {
+        width: 80%;
+        margin-top: 20%;
+        margin-left: 4rem;
+        margin-bottom: 20%;
+        font-family: 'Uchen', serif;
+    }
+
+    main {
+        width: 80%;
+        margin: 4rem;
+        margin-top: 30%;
+        padding: 16px;
+        font-family: 'Uchen', serif;
+    }
+
+    .search_section form {
+        padding: 16px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }  
+
+    .search_section form button {
+        margin-top: 20px;
+        padding: 15px;
+    }  
+}
+
+@media screen and (min-width: 769px) {
+    aside {
+        float: right;
+        width: 50%;
+        margin-top: 20%;
+        margin-right: 50px;
+        margin-bottom: 30px;
+        font-family: 'Uchen', serif;
+    }
+
+    main {
+        float: left;
+        max-width: 800px;
+        width: 50%;
+        margin: 5rem;
+        margin-top: 10%;
+        padding: 16px;
+        font-family: 'Uchen', serif;
+    }
+
+    .container {
+        display: flex;
+    }
+    
+    .search_section form {
+        padding: 16px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }  
+
+    .search_section form button {
+        margin-top: 20px;
+        padding: 15px;
+    }  
+}
+
+
+
+
+
+
+
